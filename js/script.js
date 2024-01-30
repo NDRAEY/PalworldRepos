@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var is_github_pages = window.location.href.includes("github.io");
 var data_addr = "/data.json";
 if (is_github_pages) {
-    data_addr = "/PalworldRepos/" + data_addr;
+    data_addr = "/PalworldRepos" + data_addr;
 }
 function fetch_pals_json() {
     return __awaiter(this, void 0, void 0, function () {

@@ -17,7 +17,7 @@ let is_github_pages = window.location.href.includes("github.io");
 let data_addr = "/data.json";
 
 if(is_github_pages) {
-    data_addr = "/PalworldRepos/" + data_addr;
+    data_addr = "/PalworldRepos" + data_addr;
 }
 
 async function fetch_pals_json(): Promise<any> {
