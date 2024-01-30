@@ -13,6 +13,13 @@ type PalRepos = {
     repos: Repo[]
 }
 
+let is_github_pages = window.location.href.includes("github.io");
+let data_addr = "/data.json";
+
+if(is_github_pages) {
+    data_addr = "/PalworldRepos/" + data_addr;
+}
+
 async function fetch_pals_json(): Promise<any> {
     let resp = await fetch("/data.json");
 
@@ -59,8 +66,14 @@ function render_info(root_element: HTMLElement, value: Array<PalRepos>) {
 
             // Card image
             let card_image = new Image();
-            // card_image.src = element.image
-            card_image.src = "img/pals/" + element.image.split("/")[element.image.split("/").length - 1]
+            
+            let image_path = "img/pals/" + element.image.split("/")[element.image.split("/").length - 1];
+
+            if(is_github_pages) {
+                image_path = "/PalworldRepos/" + image_path
+            }
+
+            card_image.src = image_path
             card_header.appendChild(card_image)
 
 

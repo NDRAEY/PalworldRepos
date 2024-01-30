@@ -34,6 +34,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var is_github_pages = window.location.href.includes("github.io");
+var data_addr = "/data.json";
+if (is_github_pages) {
+    data_addr = "/PalworldRepos/" + data_addr;
+}
 function fetch_pals_json() {
     return __awaiter(this, void 0, void 0, function () {
         var resp;
@@ -74,8 +79,11 @@ function render_info(root_element, value) {
             card_header.classList.add("table-card-header");
             // Card image
             var card_image = new Image();
-            // card_image.src = element.image
-            card_image.src = "img/pals/" + element.image.split("/")[element.image.split("/").length - 1];
+            var image_path = "img/pals/" + element.image.split("/")[element.image.split("/").length - 1];
+            if (is_github_pages) {
+                image_path = "/PalworldRepos/" + image_path;
+            }
+            card_image.src = image_path;
             card_header.appendChild(card_image);
             var card_info = document.createElement("div");
             card_info.classList.add("info");
