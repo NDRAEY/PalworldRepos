@@ -44,7 +44,7 @@ function fetch_pals_json() {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, fetch("/data.json")];
+                case 0: return [4 /*yield*/, fetch(data_addr)];
                 case 1:
                     resp = _a.sent();
                     if (!resp.ok) return [3 /*break*/, 3];
