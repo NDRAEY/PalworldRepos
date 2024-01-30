@@ -19,7 +19,7 @@ jobs:
 
       - name: Install Typescript
         run: |
-          sudo pip3 install beautifulsoup4
+          sudo pip3 install beautifulsoup4 lxml
 
       - name: Build project
         run: bash build.sh
