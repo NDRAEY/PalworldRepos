@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style/table.css"/>
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <div id="container">
+            
+        </div>
+    </body>
+
+    <script>
+        let doc = document.getElementById("container")
+        let info = fetch_pals_json()
+
+        info.then(val => { render_info(doc, val) })
+    </script>
+</html>
