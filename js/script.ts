@@ -21,7 +21,7 @@ if(is_github_pages) {
 }
 
 async function fetch_pals_json(): Promise<any> {
-    let resp = await fetch("/data.json");
+    let resp = await fetch(data_addr);
 
     if(resp.ok) {
         return await resp.json();
