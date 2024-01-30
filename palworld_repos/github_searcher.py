@@ -33,7 +33,8 @@ class Query:
 
         is_match = lambda i: i['name'].lower() == no_spaces_name \
                              or i['name'].lower() == lodashed_spaces_name \
-                             or i['name'].lower() == dashed_spaces_name
+                             or i['name'].lower() == dashed_spaces_name \
+                             or i['name'].lower() == name
 
         return [i for i in items if is_match(i)]
 

@@ -15,6 +15,11 @@ if __name__ == "__main__":
 
         matched_repos = repos.name_match_exact(i.name)
 
+        if matched_repos:
+            print("Found")
+            
+        print(i.name, repos.result)
+
         data.append({
             'name': i.name,
             'image': i.image,
