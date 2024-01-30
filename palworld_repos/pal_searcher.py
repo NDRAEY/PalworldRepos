@@ -37,7 +37,8 @@ class PalListParser:
 
         for i in pals_elements:
             name = i.find("h3", class_="elementor-post__title").a.text.strip()
-            image_url = i.find("img", class_="attachment-full")['data-src']
+            # image_url = i.find("img", class_="attachment-full")['data-src']
+            image_url = i.find("img", class_="attachment-full")['src']
 
             pals.append(Pal(name, image_url))
 
