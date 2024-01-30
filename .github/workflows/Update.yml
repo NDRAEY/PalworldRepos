@@ -1,0 +1,29 @@
+name: Build and update project
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: debian-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install nodejs
+        run: sudo apt install nodejs npm
+
+      - name: Install Typescript
+        run: |
+          sudo npm i -g typescript
+
+      - name: Build project
+        run: bash build.sh
+
+      - name: Build web
+        run: bash build_web.sh
+
+      - name: Deploy?
+        uses: rayluo/github-pages-overwriter@v1.3
+        with:
+            source-directory: static/
