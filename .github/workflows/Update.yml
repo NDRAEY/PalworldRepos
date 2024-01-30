@@ -23,7 +23,8 @@ jobs:
       - name: Build web
         run: bash build_web.sh
 
-      - name: Deploy?
-        uses: rayluo/github-pages-overwriter@v1.3
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-            source-directory: ./static/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./static/
